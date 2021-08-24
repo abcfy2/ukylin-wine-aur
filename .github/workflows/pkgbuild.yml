@@ -22,9 +22,8 @@ jobs:
       - name: Install and check
         run: |
           chown -R aur:aur .
-          sudo -u aur yay --noconfirm -Syu
+          sudo pacman -Sy
           sudo -u aur makepkg -si --needed --noconfirm
-          ukylin-wine --version
       - name: Refresh .SRCINFO
         run: |
           sudo -u aur makepkg --printsrcinfo > .SRCINFO
